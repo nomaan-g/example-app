@@ -1,18 +1,34 @@
 <?php
-// Define two numbers
-$number1 = 5;
-$number2 = 10;
+echo "The reversed number of $inputNumber is: $result";
 
-// Display the original numbers
-echo "Original numbers: ";
-echo "Number 1 = " . $number1 . ", Number 2 = " . $number2 . "\n";
+/**
+ * A function to reverse a number in PHP.
+ *
+ * @param int $number The number to be reversed.
+ * @return int The reversed number.
+ */
+function reverseNumber($number) {
+    if (!is_numeric($number)) {
+        return "Invalid input. Please provide a numeric value.";
+    }
 
-// Swap the numbers using a temporary variable
-$temp = $number1;
-$number1 = $number2;
-$number2 = $temp;
+    $reversedNumber = 0;
+    $originalNumber = abs($number); // Ensure the original number is non-negative
 
-// Display the swapped numbers
-echo "Swapped numbers: ";
-echo "Number 1 = " . $number1 . ", Number 2 = " . $number2 . "\n";
+    while ($originalNumber > 0) {
+        $digit = $originalNumber % 10;
+
+        $reversedNumber = $reversedNumber * 10 + $digit;
+
+        $originalNumber = (int)($originalNumber / 10);
+    }
+
+    return ($number < 0) ? -$reversedNumber : $reversedNumber;
+}
+
+$inputNumber = 12345; // Change this number to test different reversals
+$result = reverseNumber($inputNumber);
+echo "The reversed number of $inputNumber is: $result";
+
 ?>
+
