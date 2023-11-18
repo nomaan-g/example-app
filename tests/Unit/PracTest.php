@@ -4,7 +4,7 @@ namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 
-class PracticalTest extends TestCase
+class PracTest extends TestCase
 {
     /**
      * A basic unit test example.
@@ -14,5 +14,3 @@ class PracticalTest extends TestCase
         $this->assertTrue(true);
     }
 }
-?>
-
