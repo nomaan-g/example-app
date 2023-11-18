@@ -1,4 +1,5 @@
 <?php
+use Practicals\Song;
 namespace Practicals;
 /**
  * Class representing a Song with basic properties.
