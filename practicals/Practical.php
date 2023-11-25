@@ -1,70 +1,53 @@
 <?php
 
+namespace Practicals;
+
 /**
  * Class Practical
- * This class contains practical static functions for common tasks.
+ * 
+ * A class containing practical static functions.
  */
-class Practical
-{
+class Practical {
+    
     /**
-     * Generates a random string of specified length.
-     *
-     * @param int $length The length of the random string.
-     * @return string The generated random string.
+     * Add two numbers and return the result.
+     * 
+     * @param int $a The first number.
+     * @param int $b The second number.
+     * @return int The sum of the two numbers.
      */
-    public static function generateRandomString($length)
-    {
-        $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-        $randomString = '';
-
-        for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[rand(0, strlen($characters) - 1)];
-        }
-
-        return $randomString;
+    public static function addNumbers($a, $b) {
+        return $a + $b;
     }
 
     /**
-     * Formats a given date string to a user-friendly format.
-     *
-     * @param string $dateString The input date string.
-     * @return string The formatted date string.
+     * Check if a given number is even.
+     * 
+     * @param int $number The number to check.
+     * @return bool True if the number is even, false otherwise.
      */
-    public static function formatDate($dateString)
-    {
-        // Assuming $dateString is in a standard date format like "YYYY-MM-DD"
-        $timestamp = strtotime($dateString);
-        $formattedDate = date('F j, Y', $timestamp);
-
-        return $formattedDate;
+    public static function isEven($number) {
+        return $number % 2 === 0;
     }
 
     /**
-     * Truncates a given string to a specified length and appends ellipsis if needed.
-     *
-     * @param string $text The input string to be truncated.
-     * @param int $maxLength The maximum length of the truncated string.
-     * @return string The truncated string.
+     * Generate a personalized greeting.
+     * 
+     * @param string $name The name to include in the greeting.
+     * @return string The formatted greeting.
      */
-    public static function truncateString($text, $maxLength)
-    {
-        if (strlen($text) > $maxLength) {
-            $truncatedText = substr($text, 0, $maxLength - 3) . '...';
-        } else {
-            $truncatedText = $text;
-        }
+    public static function greet($name) {
+        return "Hello, $name!";
+    }
 
-        return $truncatedText;
+    /**
+     * Generate a random number within a specified range.
+     * 
+     * @param int $min The minimum value of the range.
+     * @param int $max The maximum value of the range.
+     * @return int The randomly generated number.
+     */
+    public static function generateRandomNumber($min, $max) {
+        return rand($min, $max);
     }
 }
-
-// Example usage:
-$randomString = Practical::generateRandomString(8);
-$formattedDate = Practical::formatDate('2023-11-18');
-$truncatedText = Practical::truncateString('Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 20);
-
-echo "Random String: $randomString\n";
-echo "Formatted Date: $formattedDate\n";
-echo "Truncated Text: $truncatedText\n";
-?>
-
