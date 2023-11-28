@@ -1,5 +1,6 @@
 use PHPUnit\Framework\TestCase;
-
+require(__DIR__.'/../../practicals/Song.php');
+use practicals\Song;
 class SongsTest extends TestCase {
     
     public function testSongsStaticEndpoint() {
@@ -30,6 +31,17 @@ class MockHttpResponse {
 
     public function getStatusCode() {
         return $this->statusCode;
+
     }
+    /**
+     * A basic feature test songs.
+     */
+    public function testSongsOk(): void
+    {
+        $response = $this->get('/songs');
+
+        $response->assertStatus(200);
+    }
+
 }
 

@@ -1,46 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Song List</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
+<?php
 
-        h1 {
-            text-align: center;
-        }
+namespace Practicals;
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
+/**
+ * Class Song
+ * 
+ * A class representing a song with getter and setter functions for properties.
+ */
+class Song {
+    /**
+     * @var string The title of the song.
+     */
+    private $title;
 
-        li {
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f8f8f8;
-        }
-    </style>
-</head>
-<body>
-    <h1>Song List</h1>
-    <ul>
-        <li>
-            <strong>Title:</strong> Song 1<br>
-            <strong>Artist:</strong> Artist 1
-        </li>
-        <li>
-            <strong>Title:</strong> Song 2<br>
-            <strong>Artist:</strong> Artist 2
-        </li>
-        <!-- Add more <li> elements for additional songs -->
-    </ul>
-</body>
-</html>
+    /**
+     * @var string The artist of the song.
+     */
+    private $artist;
+
+    /**
+     * @var string The genre of the song.
+     */
+    private $genre;
+
+    /**
+     * @var int The tempo of the song.
+     */
+    private $tempo;
+
+    /**
+     * Get the title of the song.
+     * 
+     * @return string The title of the song.
+     */
+    public function getTitle() {
+        return $this->title;
+    }
+
+    /**
+     * Set the title of the song.
+     * 
+     * @param string $title The title of the song.
+     */
+    public function setTitle($title) {
+        $this->title = $title;
+    }
+
+    /**
+     * Get the artist of the song.
+     * 
+     * @return string The artist of the song.
+     */
+    public function getArtist() {
+        return $this->artist;
+    }
+
+    /**
+     * Set the artist of the song.
+     * 
+     * @param string $artist The artist of the song.
+     */
+    public function setArtist($artist) {
+        $this->artist = $artist;
+    }
+
+    /**
+     * Get the genre of the song.
+     * 
+     * @return string The genre of the song.
+     */
+    public function getGenre() {
+        return $this->genre;
+    }
+
+    /**
+     * Set the genre of the song.
+     * 
+     * @param string $genre The genre of the song.
+     */
+    public function setGenre($genre) {
+        $this->genre = $genre;
+    }
+
+    /**
+     * Get the tempo of the song.
+     * 
+     * @return int The tempo of the song.
+     */
+    public function getTempo() {
+        return $this->tempo;
+    }
+
+    /**
+     * Set the tempo of the song.
+     * 
+     * @param int $tempo The tempo of the song.
+     */
+    public function setTempo($tempo) {
+        $this->tempo = $tempo;
+    }
+}
+
+?>
 
