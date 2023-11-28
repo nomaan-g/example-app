@@ -3,8 +3,8 @@ namespace practicals;
 
 class Practical {
     /**
-     * Function to print "Hello, World!"
-     */
+     * Function to print "Hello, World!"   
+  */
     public static function printHello() {
         echo "Hello, World!\n";
     }
