@@ -25,6 +25,7 @@ Route::get('/hello', function () {
     return view('veggies');
 });
 
+
 // On route '/veggies 'a chart should be seen , with name and price of veggies
 Route::get('/veggies', function () {
     return view('table');
